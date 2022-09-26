@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poo_project/Screens/hint/hint_screen.dart';
+import 'package:poo_project/Screens/localization/localization_screen.dart';
 import 'package:poo_project/Screens/splash/splash_screen.dart';
 
 import 'Screens/screens_index.dart';
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
         routes: {
           Screens.splash: (BuildContext context) => const SplashScreen(),
           Screens.hint: (BuildContext context) => const HintScreen(),
+          Screens.localization: (BuildContext context) =>
+              const LocalizationScreen(),
         });
   }
 }
