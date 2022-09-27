@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poo_project/Screens/hint/hint_screen.dart';
+import 'package:poo_project/Screens/home/home_screen.dart';
 import 'package:poo_project/Screens/localization/localization_screen.dart';
 import 'package:poo_project/Screens/splash/splash_screen.dart';
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
           Screens.hint: (BuildContext context) => const HintScreen(),
           Screens.localization: (BuildContext context) =>
               const LocalizationScreen(),
+          Screens.home: (BuildContext context) => const HomeScreen(),
         });
   }
 }

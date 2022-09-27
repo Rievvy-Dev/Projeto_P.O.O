@@ -4,14 +4,18 @@ import 'package:poo_project/Screens/screens_index.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
 import 'package:poo_project/core/constants/app_size.dart';
 
-class LocalizationScreen extends StatelessWidget {
+class LocalizationScreen extends StatefulWidget {
   const LocalizationScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    double latitude;
-    double longitude;
+  State<LocalizationScreen> createState() => _LocalizationScreenState();
+}
 
+class _LocalizationScreenState extends State<LocalizationScreen> {
+  double? latitude;
+  double? longitude;
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.kBackgroundColor,
@@ -72,7 +76,7 @@ class LocalizationScreen extends StatelessWidget {
                   margin: const EdgeInsets.only(left: AppSize.kLargeSize),
                   child: TextButton.icon(
                       onPressed: () {
-                        LocalizationController.takePosition();
+                        LocalizationController.takePosition(context);
                       },
                       style: const ButtonStyle(),
                       icon: const Icon(Icons.gps_fixed),
