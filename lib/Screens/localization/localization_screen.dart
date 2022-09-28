@@ -3,6 +3,8 @@ import 'package:poo_project/Screens/localization/localization_controller.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
 import 'package:poo_project/core/constants/app_size.dart';
 
+import '../../generated/l10n.dart';
+
 class LocalizationScreen extends StatefulWidget {
   const LocalizationScreen({super.key});
 
@@ -52,9 +54,9 @@ class _LocalizationScreenState extends State<LocalizationScreen> {
                       style: TextStyle(
                           fontSize: AppSize.kLargeSize,
                           fontWeight: FontWeight.bold)),
-                  const Text(
-                    'Onde você está?',
-                    style: TextStyle(fontSize: AppSize.kHighSize),
+                  Text(
+                    S.of(context).ondeVoceEsta,
+                    style: const TextStyle(fontSize: AppSize.kHighSize),
                   ),
                 ],
               ),

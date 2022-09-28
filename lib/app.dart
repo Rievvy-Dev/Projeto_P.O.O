@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:poo_project/Screens/hint/hint_screen.dart';
 import 'package:poo_project/Screens/localization/localization_screen.dart';
 import 'package:poo_project/Screens/splash/splash_screen.dart';
-
+import 'package:poo_project/generated/l10n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'Screens/screens_index.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,6 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
