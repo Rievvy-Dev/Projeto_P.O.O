@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:poo_project/Screens/hint/hint_screen.dart';
 import 'package:poo_project/Screens/home/home_screen.dart';
 import 'package:poo_project/Screens/localization/localization_screen.dart';
-
-import '../screens_index.dart';
 
 class SplashScreenController {
   final BuildContext context;

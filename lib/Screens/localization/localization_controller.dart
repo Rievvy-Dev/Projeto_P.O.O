@@ -1,12 +1,9 @@
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:poo_project/Screens/home/home_screen.dart';
-
-import '../screens_index.dart';
 
 class LocalizationController {
   static Future<String> takePosition(context) async {
@@ -17,7 +14,7 @@ class LocalizationController {
 
     if (locals != null) {
       city = locals[0].subAdministrativeArea.toString();
-      print(city);
+
       navigatorHome(context, city);
       return city;
     } else {

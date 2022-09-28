@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:poo_project/Screens/localization/localization_controller.dart';
-import 'package:poo_project/Screens/screens_index.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
 import 'package:poo_project/core/constants/app_size.dart';
 
@@ -16,10 +15,8 @@ class _LocalizationScreenState extends State<LocalizationScreen> {
   double? longitude;
 
   void saveCity() {
-    String city;
-
     setState(() {
-      city = LocalizationController.takePosition(context).toString();
+      LocalizationController.takePosition(context).toString();
     });
   }
 

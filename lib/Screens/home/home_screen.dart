@@ -1,65 +1,89 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:poo_project/Screens/localization/localization_controller.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
 import 'package:poo_project/core/constants/app_size.dart';
+import 'package:poo_project/Screens/profile/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  String city;
+  final String city;
 
-  HomeScreen(this.city);
+  const HomeScreen(this.city, {super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final PageController pageController = PageController();
+  int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.grey,
-              ))
-        ],
-      ),
       backgroundColor: AppColors.kBackgroundColor,
-      body: ListView(
+      body: PageView(
+        controller: pageController,
+        onPageChanged: (value) => setState(() {
+          index = value;
+        }),
         children: [
           Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(
-                    top: AppSize.kHugeSize,
-                    bottom: AppSize.kHugeSize,
-                    left: AppSize.kLargeSize,
-                    right: AppSize.kLargeSize),
-                child: TextField(
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color: AppColors.kPrimaryColor,
-                        size: AppSize.kLargeSize,
+              Container(
+                margin: const EdgeInsets.only(
+                    top: 50, left: AppSize.kHighSize, right: AppSize.kHighSize),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.search,
+                              color: AppColors.kPrimaryColor,
+                              size: AppSize.kLargeSize,
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(50),
+                              ),
+                            ),
+                            hintText: 'O que você procura?',
+                            fillColor: Colors.black),
                       ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(50),
-                        ),
-                      ),
-                      hintText: 'O que você procura?',
-                      fillColor: Colors.black),
+                    ),
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.menu))
+                  ],
                 ),
               ),
-              Text('O que você precisa em ${widget.city}'),
+              Text(
+                'Procurando o que em ${widget.city} hoje?',
+                style: TextStyle(),
+              ),
             ],
+          ),
+          Container(),
+          const ProfileScreen()
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: index,
+        onTap: (value) => setState(() {
+          index = value;
+          pageController.animateToPage(value,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.linear);
+        }),
+        items: const [
+          BottomNavigationBarItem(
+            label: 'Home',
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            label: 'Buscar',
+            icon: Icon(Icons.search),
+          ),
+          BottomNavigationBarItem(
+            label: 'Perfil',
+            icon: Icon(Icons.person),
           )
         ],
       ),
