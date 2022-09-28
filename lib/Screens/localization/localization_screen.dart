@@ -14,6 +14,15 @@ class LocalizationScreen extends StatefulWidget {
 class _LocalizationScreenState extends State<LocalizationScreen> {
   double? latitude;
   double? longitude;
+
+  void saveCity() {
+    String city;
+
+    setState(() {
+      city = LocalizationController.takePosition(context).toString();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +85,7 @@ class _LocalizationScreenState extends State<LocalizationScreen> {
                   margin: const EdgeInsets.only(left: AppSize.kLargeSize),
                   child: TextButton.icon(
                       onPressed: () {
-                        LocalizationController.takePosition(context);
+                        saveCity();
                       },
                       style: const ButtonStyle(),
                       icon: const Icon(Icons.gps_fixed),

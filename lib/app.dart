@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
           Screens.hint: (BuildContext context) => const HintScreen(),
           Screens.localization: (BuildContext context) =>
               const LocalizationScreen(),
-          Screens.home: (BuildContext context) => const HomeScreen(),
         });
   }
 }

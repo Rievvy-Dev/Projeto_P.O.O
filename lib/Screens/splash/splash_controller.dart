@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poo_project/Screens/hint/hint_screen.dart';
+import 'package:poo_project/Screens/home/home_screen.dart';
+import 'package:poo_project/Screens/localization/localization_screen.dart';
 
 import '../screens_index.dart';
 
@@ -13,7 +15,7 @@ class SplashScreenController {
       (value) => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const HintScreen(),
+          builder: (context) => const LocalizationScreen(),
         ),
       ),
     );
