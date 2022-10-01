@@ -53,7 +53,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () =>
+                              Navigator.pushNamed(context, Screens.signUp),
                           style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.resolveWith<Color>(
@@ -69,7 +70,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           width: AppSize.kVeryLargeSize,
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () =>
+                              Navigator.pushNamed(context, Screens.signIn),
                           style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.resolveWith<Color>(
@@ -241,7 +243,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () =>
+                        Navigator.pushNamed(context, Screens.signUp),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.resolveWith(
                           (states) => AppColors.kBackgroundColor),
@@ -270,7 +273,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const Text('Já tem uma conta?'),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () =>
+                        Navigator.pushNamed(context, Screens.signIn),
                     child: const Text('Faça seu login.'),
                   ),
                 ],

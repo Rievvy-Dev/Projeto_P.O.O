@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:poo_project/Screens/hint/hint_screen.dart';
 import 'package:poo_project/Screens/localization/localization_screen.dart';
+import 'package:poo_project/Screens/signIn/signin_screen.dart';
+import 'package:poo_project/Screens/signUp/signup_screen.dart';
 import 'package:poo_project/Screens/splash/splash_screen.dart';
 import 'package:poo_project/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget {
           Screens.hint: (BuildContext context) => const HintScreen(),
           Screens.localization: (BuildContext context) =>
               const LocalizationScreen(),
+          Screens.signUp: (BuildContext context) => const SignUpScreen(),
+          Screens.signIn: (BuildContext context) => const SignInScreen(),
         });
   }
 }
