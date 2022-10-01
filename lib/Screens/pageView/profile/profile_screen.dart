@@ -48,39 +48,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const Spacer(),
                   Container(
+                    padding: const EdgeInsets.all(5),
                     margin: const EdgeInsets.only(left: 20, right: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ElevatedButton(
-                          onPressed: () =>
-                              Navigator.pushNamed(context, Screens.signUp),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.resolveWith<Color>(
-                              (states) => (Colors.white),
+                        Expanded(
+                          flex: 1,
+                          child: ElevatedButton(
+                            onPressed: () =>
+                                Navigator.pushNamed(context, Screens.signUp),
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.resolveWith<Color>(
+                                (states) => (Colors.white),
+                              ),
                             ),
-                          ),
-                          child: const Text(
-                            'Cadastrar',
-                            style: TextStyle(color: AppColors.kPrimaryColor),
+                            child: const Text(
+                              'Cadastrar',
+                              style: TextStyle(color: AppColors.kPrimaryColor),
+                            ),
                           ),
                         ),
                         const SizedBox(
                           width: AppSize.kVeryLargeSize,
                         ),
-                        ElevatedButton(
-                          onPressed: () =>
-                              Navigator.pushNamed(context, Screens.signIn),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.resolveWith<Color>(
-                              (states) => (Colors.white),
+                        Expanded(
+                          flex: 1,
+                          child: ElevatedButton(
+                            onPressed: () =>
+                                Navigator.pushNamed(context, Screens.signIn),
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.resolveWith<Color>(
+                                (states) => (Colors.white),
+                              ),
                             ),
-                          ),
-                          child: const Text(
-                            'Login',
-                            style: TextStyle(color: AppColors.kPrimaryColor),
+                            child: const Text(
+                              'Login',
+                              style: TextStyle(color: AppColors.kPrimaryColor),
+                            ),
                           ),
                         ),
                       ],

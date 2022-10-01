@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:highlight_text/highlight_text.dart';
+import 'package:poo_project/Screens/pageView/home/home_screen_controller.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
 import 'package:poo_project/core/constants/app_size.dart';
 
@@ -13,8 +15,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    HomeScreenController controller = HomeScreenController(widget.city);
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             margin: const EdgeInsets.only(
@@ -42,9 +46,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          Text(
-            'Procurando o que em ${widget.city} hoje?',
-            style: const TextStyle(),
+          Container(
+            margin: const EdgeInsets.all(AppSize.kHighSize),
+            child: TextHighlight(
+              text: 'Procurando o que em ${widget.city} \nhoje?',
+              words: controller.changeWord(),
+              textStyle: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: AppSize.kLargeSize),
+            ),
           ),
         ],
       ),
