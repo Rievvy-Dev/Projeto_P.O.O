@@ -29,7 +29,7 @@ class _PageViewControllerState extends State<PageViewController> {
         children: [
           HomeScreen(widget.city),
           const SearchScreen(),
-          const ProfileScreen(),
+          ProfileScreen(widget.city),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
