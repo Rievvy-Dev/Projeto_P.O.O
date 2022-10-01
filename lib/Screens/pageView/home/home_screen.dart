@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
               textStyle: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: AppSize.kLargeSize),
+                  fontSize: AppSize.kHugeSize),
             ),
           ),
         ],
