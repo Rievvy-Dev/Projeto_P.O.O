@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:highlight_text/highlight_text.dart';
 import 'package:poo_project/Screens/pageView/home/home_screen_controller.dart';
+import 'package:poo_project/Screens/pageView/page_view_controller.dart';
+import 'package:poo_project/Screens/pageView/profile/profile_screen.dart';
+import 'package:poo_project/Screens/screens_index.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
 import 'package:poo_project/core/constants/app_size.dart';
 
@@ -24,8 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: const EdgeInsets.only(
                 top: 50, left: AppSize.kHighSize, right: AppSize.kHighSize),
             child: Row(
-              children: [
-                const Expanded(
+              children: const [
+                Expanded(
                   child: TextField(
                     decoration: InputDecoration(
                         prefixIcon: Icon(
@@ -42,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         fillColor: Colors.black),
                   ),
                 ),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.menu))
               ],
             ),
           ),
