@@ -4,4 +4,6 @@ class Screens {
   static const String localization = '/localization';
   static const String home = '/home';
   static const String pageView = '/pageView';
+  static const String search = '/search';
+  static const String profile = '/profile';
 }

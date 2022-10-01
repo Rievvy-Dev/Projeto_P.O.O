@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poo_project/Screens/hint/hint_screen.dart';
 import 'package:poo_project/Screens/localization/localization_screen.dart';
-import 'package:poo_project/Screens/pageView/page_view_controller.dart';
 import 'package:poo_project/Screens/splash/splash_screen.dart';
 import 'package:poo_project/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

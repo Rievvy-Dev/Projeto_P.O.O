@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:poo_project/Screens/pageView/home/home_screen.dart';
 import 'package:poo_project/Screens/pageView/page_view_controller.dart';
 
 class LocalizationController {

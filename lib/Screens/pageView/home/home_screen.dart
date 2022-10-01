@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
 import 'package:poo_project/core/constants/app_size.dart';
-import 'package:poo_project/Screens/pageView/profile/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final String city;
@@ -45,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Text(
             'Procurando o que em ${widget.city} hoje?',
-            style: TextStyle(),
+            style: const TextStyle(),
           ),
         ],
       ),

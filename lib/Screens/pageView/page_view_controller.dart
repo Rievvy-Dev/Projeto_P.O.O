@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poo_project/Screens/pageView/home/home_screen.dart';
+import 'package:poo_project/Screens/pageView/search/search_screen.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
-import 'package:poo_project/core/constants/app_size.dart';
 import 'package:poo_project/Screens/pageView/profile/profile_screen.dart';
 
 class PageViewController extends StatefulWidget {
@@ -28,7 +28,7 @@ class _PageViewControllerState extends State<PageViewController> {
         }),
         children: [
           HomeScreen(widget.city),
-          Container(),
+          const SearchScreen(),
           const ProfileScreen(),
         ],
       ),
