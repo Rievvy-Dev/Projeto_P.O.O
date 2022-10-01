@@ -28,10 +28,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('É profissional ou empresa?'),
-                  const Text('Receba pedidos de orçamentos no seu WhatsApp!'),
                   const Text(
-                      'Cadastre-se e receba pedidos de orçamentos e seja encontrado por quem procura seus serviços!'),
+                    'É profissional ou empresa?',
+                    style: TextStyle(
+                        color: AppColors.kBackgroundColor,
+                        fontSize: AppSize.kLargeSize),
+                  ),
+                  const Text(
+                    'Receba pedidos de orçamentos no seu WhatsApp!',
+                    style: TextStyle(
+                        color: AppColors.kBackgroundColor,
+                        fontSize: AppSize.kLargeSize),
+                  ),
+                  const Text(
+                    'Cadastre-se e receba pedidos de orçamentos e seja encontrado por quem procura seus serviços!',
+                    style: TextStyle(
+                        color: AppColors.kBackgroundColor,
+                        fontSize: AppSize.kHighSize),
+                  ),
+                  const Spacer(),
                   Container(
                     margin: const EdgeInsets.only(left: 20, right: 20),
                     child: Row(
@@ -39,14 +54,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         ElevatedButton(
                           onPressed: () {},
-                          child: const Text('Cadastrar'),
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                              (states) => (Colors.white),
+                            ),
+                          ),
+                          child: const Text(
+                            'Cadastrar',
+                            style: TextStyle(color: AppColors.kPrimaryColor),
+                          ),
                         ),
                         const SizedBox(
                           width: AppSize.kVeryLargeSize,
                         ),
                         ElevatedButton(
                           onPressed: () {},
-                          child: const Text('Login'),
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                              (states) => (Colors.white),
+                            ),
+                          ),
+                          child: const Text(
+                            'Login',
+                            style: TextStyle(color: AppColors.kPrimaryColor),
+                          ),
                         ),
                       ],
                     ),
@@ -157,7 +190,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
         Container(
-          height: 400,
+          padding: const EdgeInsets.all(20),
           color: AppColors.kPrimaryColor,
           alignment: Alignment.center,
           child: Column(
@@ -175,24 +208,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(right: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('Divulgue seu WhatsApp no Jáchei!'),
-                        const Text('Você é um profissional?'),
-                        Text(
-                          'Cadastre-se de graça e começe a divulgar seu trabalho \nem ${widget.city}',
-                        )
-                      ],
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Divulgue seu WhatsApp no Jáchei!',
+                        style: TextStyle(
+                            color: AppColors.kBackgroundColor,
+                            fontSize: AppSize.kHighSize),
+                      ),
+                      const SizedBox(
+                        height: AppSize.kMediumSize,
+                      ),
+                      const Text(
+                        'Você é um profissional?',
+                        style: TextStyle(
+                            color: AppColors.kBackgroundColor,
+                            fontSize: AppSize.kMediumSize),
+                      ),
+                      Text(
+                        'Cadastre-se de graça e começe a divulgar seu \ntrabalho em ${widget.city}',
+                        style: const TextStyle(
+                            color: AppColors.kBackgroundColor,
+                            fontSize: AppSize.kMediumSize),
+                      ),
+                    ],
                   )
                 ],
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Cadastrar'),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith(
+                          (states) => AppColors.kBackgroundColor),
+                    ),
+                    child: const Text(
+                      'Cadastrar',
+                      style: TextStyle(color: AppColors.kPrimaryColor),
+                    ),
+                  ),
+                ),
               )
             ],
           ),
