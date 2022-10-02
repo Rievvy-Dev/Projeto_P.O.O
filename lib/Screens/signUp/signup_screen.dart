@@ -52,8 +52,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.phone,
                   style: const TextStyle(fontSize: AppSize.kHugeSize),
                   decoration: const InputDecoration(
+
                     label: Text(
                       'DDD + Número',
+
                       style: TextStyle(
                         color: Colors.black26,
                         fontSize: AppSize.kHighSize,
@@ -74,7 +76,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 TextFormField(
                   controller: nameController,
-                  keyboardType: TextInputType.phone,
                   style: const TextStyle(fontSize: AppSize.kHugeSize),
                   decoration: const InputDecoration(
                     label: Text(

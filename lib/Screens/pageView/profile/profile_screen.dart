@@ -224,7 +224,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Divulgue seu WhatsApp no Jáchei!',
+                          'Divulgue seu WhatsApp no\n Jáchei!',
                           style: TextStyle(
                               color: AppColors.kBackgroundColor,
                               fontSize: AppSize.kHighSize),
@@ -239,7 +239,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               fontSize: AppSize.kMediumSize),
                         ),
                         Text(
-                          'Cadastre-se de graça e começe a divulgar seu \ntrabalho em ${widget.city}',
+                          'Cadastre-se de graça e começe a \ndivulgar seu trabalho em \n${widget.city}',
                           style: const TextStyle(
                               color: AppColors.kBackgroundColor,
                               fontSize: AppSize.kMediumSize),

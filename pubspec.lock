@@ -122,7 +122,7 @@ packages:
       name: flutter_native_splash
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.9"
+    version: "2.2.10+1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -196,6 +196,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.15.0"
+  http:
+    dependency: "direct main"
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.13.5"
   http_parser:
     dependency: transitive
     description:
@@ -224,13 +231,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
-  lint:
-    dependency: transitive
-    description:
-      name: lint
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.10.0"
   lints:
     dependency: transitive
     description:
@@ -468,5 +468,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.18-201.0.dev <3.0.0"
+  dart: ">=2.19.0-201.0.dev <3.0.0"
   flutter: ">=3.0.0"
