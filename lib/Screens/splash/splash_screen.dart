@@ -15,7 +15,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _controller.initApplication();
+    _controller.verifyToken().then((value) => {
+          if (value)
+            {
+              _controller.initHomePage(),
+            }
+          else
+            {
+              _controller.initApplication(),
+            }
+        });
   }
 
   @override
