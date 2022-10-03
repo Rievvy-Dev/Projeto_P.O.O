@@ -17,7 +17,7 @@ class CategoryScreen extends StatefulWidget {
 class _CategoryScreenState extends State<CategoryScreen> {
   CategoryController controller = CategoryController();
   CategoryRepository repository = CategoryRepository();
-  Future<List<ModeloServicosHasCategorias>> ? getServices;
+  Future<List<ModeloServicosHasCategorias>>? getServices;
   ModeloPrestadorServicos prestador = ModeloPrestadorServicos();
 
   @override
@@ -41,8 +41,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 return GestureDetector(
                   onTap: () =>
                       {controller.navigatorPrestadores(context, widget.city)},
-                  child: ListTile(
-                    title: Text(model.idServicos!.nome.toString()),
+                  child: Container(
+                    color: Colors.grey,
+                    child: ListTile(
+                      title: Text(model.idServicos!.nome.toString()),
+                      leading: const Icon(Icons.navigate_next),
+                    ),
                   ),
                 );
               }),

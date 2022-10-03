@@ -4,13 +4,13 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_categoria.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_prestador_servicos.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categorias.dart';
+import 'package:poo_project/Screens/profissional/profissional_screen.dart';
 import 'package:poo_project/Screens/service/service_repository.dart';
 
 class ServiceScreen extends StatefulWidget {
-
   String city;
 
-  ServiceScreen(this.city,{super.key});
+  ServiceScreen(this.city, {super.key});
 
   @override
   State<ServiceScreen> createState() => _ServiceScreen();
@@ -38,8 +38,20 @@ class _ServiceScreen extends State<ServiceScreen> {
               itemCount: snapshot.data!.length,
               itemBuilder: ((context, index) {
                 ModeloPrestadorServicos model = snapshot.data![index];
-                return ListTile(
-                  title: Text(model.nome.toString()),
+                return GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) => const ProfissionalScreen()),
+                    ),
+                  ),
+                  child: Container(
+                    color: Colors.grey,
+                    child: ListTile(
+                      title: Text(model.nome.toString()),
+                      leading: const Icon(Icons.navigate_next),
+                    ),
+                  ),
                 );
               }),
             );
