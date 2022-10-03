@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_categoria.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_prestador_servicos.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categorias.dart';
+import 'package:poo_project/Screens/profissional/profissional_controller.dart';
 import 'package:poo_project/Screens/profissional/profissional_screen.dart';
 import 'package:poo_project/Screens/service/service_repository.dart';
 
@@ -17,6 +18,7 @@ class ServiceScreen extends StatefulWidget {
 }
 
 class _ServiceScreen extends State<ServiceScreen> {
+  ProfissionalController prestController = ProfissionalController();
   ServiceRepository controller = ServiceRepository();
   late Future<List<ModeloPrestadorServicos>> getPrestadores;
 
@@ -42,7 +44,8 @@ class _ServiceScreen extends State<ServiceScreen> {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: ((context) => const ProfissionalScreen()),
+                      builder: ((context) =>
+                          prestController.navigatorPrestador(context)),
                     ),
                   ),
                   child: Container(

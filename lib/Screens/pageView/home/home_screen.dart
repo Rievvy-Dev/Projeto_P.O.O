@@ -76,24 +76,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     children: [
                       Flexible(
-                        child: Container(
-                          alignment: Alignment.center,
-                          margin: const EdgeInsets.only(right: 10),
-                          height: 60,
-                          width: double.infinity,
-                          color: Colors.grey.withOpacity(0.6),
-                          child: const Text(
-                            'Animais de Estimação',
-                            textAlign: TextAlign.center,
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  CategoryScreen(widget.city, "Eventos"),
+                            ),
                           ),
-                        ),
-                      ),
-                      Flexible(
-                        child: Container(
-                          margin: const EdgeInsets.only(left: 10, right: 10),
-                          height: 60,
-                          width: double.infinity,
-                          color: Colors.grey.withOpacity(0.6),
+                          child: Container(
+                            margin: const EdgeInsets.only(left: 10, right: 10),
+                            height: 60,
+                            width: double.infinity,
+                            color: Colors.grey.withOpacity(0.6),
+                            alignment: Alignment.center,
+                            child: Text('Eventos'),
+                          ),
                         ),
                       ),
                       Flexible(
@@ -101,7 +99,27 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => CategoryScreen(widget.city),
+                              builder: (context) =>
+                                  CategoryScreen(widget.city, ''),
+                            ),
+                          ),
+                          child: Container(
+                            margin: const EdgeInsets.only(left: 10, right: 10),
+                            height: 60,
+                            width: double.infinity,
+                            color: Colors.grey.withOpacity(0.6),
+                            alignment: Alignment.center,
+                            child: Text('Eventos'),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  CategoryScreen(widget.city, ''),
                             ),
                           ),
                           child: Container(
