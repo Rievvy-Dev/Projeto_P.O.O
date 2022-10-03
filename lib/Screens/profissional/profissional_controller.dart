@@ -17,10 +17,8 @@ class ProfissionalController {
 
   navigatorPrestador(context, id) {
     if (getPrestador(id) != null) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: ((context) => const ProfissionalScreen())));
+      Navigator.push(context,
+          MaterialPageRoute(builder: ((context) => ProfissionalScreen(id))));
     } else {
       const CircularProgressIndicator();
     }
