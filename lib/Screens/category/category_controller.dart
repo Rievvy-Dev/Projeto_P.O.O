@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../service/service_repository.dart';
@@ -10,7 +8,7 @@ class CategoryController extends GetxController {
   navigatorPrestadores(context, cidade) {
     if (repository.getPrestadores(cidade) != null) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => ServiceScreen()));
+          context, MaterialPageRoute(builder: (context) => ServiceScreen(cidade)));
     } else {
       return null;
     }

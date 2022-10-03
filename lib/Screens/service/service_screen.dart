@@ -7,7 +7,10 @@ import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categoria
 import 'package:poo_project/Screens/service/service_repository.dart';
 
 class ServiceScreen extends StatefulWidget {
-  const ServiceScreen({super.key});
+
+  String city;
+
+  ServiceScreen(this.city,{super.key});
 
   @override
   State<ServiceScreen> createState() => _ServiceScreen();
@@ -19,6 +22,7 @@ class _ServiceScreen extends State<ServiceScreen> {
 
   @override
   void initState() {
+    getPrestadores = controller.getPrestadores(widget.city);
     super.initState();
   }
 

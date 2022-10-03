@@ -17,13 +17,13 @@ class CategoryScreen extends StatefulWidget {
 class _CategoryScreenState extends State<CategoryScreen> {
   CategoryController controller = CategoryController();
   CategoryRepository repository = CategoryRepository();
-  late Future<List<ModeloServicosHasCategorias>> getServices;
+  Future<List<ModeloServicosHasCategorias>> ? getServices;
   ModeloPrestadorServicos prestador = ModeloPrestadorServicos();
 
   @override
   void initState() {
-    super.initState();
     getServices = repository.getServices();
+    super.initState();
   }
 
   @override
@@ -31,7 +31,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: FutureBuilder<List<ModeloServicosHasCategorias>>(
-        future: getServices,
+        future: getServices!,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
