@@ -1,10 +1,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../service/service_repository.dart';
 import '../service/service_screen.dart';
 
-class CategoryController {
+class CategoryController extends GetxController {
   ServiceRepository repository = ServiceRepository();
   navigatorPrestadores(context, cidade) {
     if (repository.getPrestadores(cidade) != null) {
