@@ -6,6 +6,7 @@ import 'package:poo_project/Screens/pageView/model/modelo_categoria.dart';
 import 'category_repository.dart';
 
 class CategoryScreen extends StatefulWidget {
+  // /servicos_has_categoria.
   const CategoryScreen({super.key});
 
   @override

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:highlight_text/highlight_text.dart';
 import 'package:poo_project/Screens/category/category_screen.dart';
 import 'package:poo_project/Screens/pageView/home/home_screen_controller.dart';
+import 'package:poo_project/Screens/profissional/profissional_screen.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
 import 'package:poo_project/core/constants/app_size.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -100,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => CategoryScreen(),
+                              builder: (context) => const ProfissionalScreen(),
                             ),
                           ),
                           child: Container(
