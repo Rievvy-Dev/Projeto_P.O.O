@@ -6,21 +6,20 @@ import 'package:poo_project/Screens/pageView/model/modelo_prestador_servicos.dar
 import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categorias.dart';
 import 'package:poo_project/Screens/service/service_repository.dart';
 
-class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({super.key});
+class ServiceScreen extends StatefulWidget {
+  const ServiceScreen({super.key});
 
   @override
-  State<CategoryScreen> createState() => _CategoryScreenState();
+  State<ServiceScreen> createState() => _ServiceScreen();
 }
 
-class _CategoryScreenState extends State<CategoryScreen> {
+class _ServiceScreen extends State<ServiceScreen> {
   ServiceRepository controller = ServiceRepository();
   late Future<List<ModeloPrestadorServicos>> getPrestadores;
 
   @override
   void initState() {
     super.initState();
-    getPrestadores = controller.getPrestadores();
   }
 
   @override
