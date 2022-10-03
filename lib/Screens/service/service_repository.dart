@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 class ServiceRepository {
   Future<List<ModeloPrestadorServicos>> getPrestadores(cidade) async {
     var response = await http.get(Uri.parse(
-        '$kBaseUrl/prestadores-servicos/ver-todos-prestadores-servicos-na-cidade-cidade-exemplo'));
+        '$kBaseUrl/prestadores-servicos/ver-todos-prestadores-servicos-na-cidade-$cidade'));
     print(response.statusCode);
     print(cidade);
     List listServices = json.decode(response.body);

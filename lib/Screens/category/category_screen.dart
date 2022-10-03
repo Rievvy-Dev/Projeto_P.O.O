@@ -7,7 +7,8 @@ import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categoria
 import 'category_repository.dart';
 
 class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({super.key});
+  final String city;
+  const CategoryScreen(this.city, {super.key});
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
@@ -38,10 +39,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
               itemBuilder: ((context, index) {
                 ModeloServicosHasCategorias model = snapshot.data![index];
                 return GestureDetector(
-                  onTap: () => {
-                    controller.navigatorPrestadores(
-                        context, prestador.idEndereco!.cidade)
-                  },
+                  onTap: () =>
+                      {controller.navigatorPrestadores(context, widget.city)},
                   child: ListTile(
                     title: Text(model.idServicos!.nome.toString()),
                   ),
