@@ -30,7 +30,7 @@ class _ProfissionalScreenState extends State<ProfissionalScreen> {
       backgroundColor: Colors.grey,
       appBar: AppBar(),
       body: FutureBuilder<ModeloPrestadorServicos>(
-        future: prestadorModel,
+        future: prestadorModel!,
         builder: (context, snapshot) {
           ModeloPrestadorServicos model = ModeloPrestadorServicos();
           return Column(children: [
