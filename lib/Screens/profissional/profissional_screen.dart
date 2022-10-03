@@ -54,8 +54,7 @@ class _ProfissionalScreenState extends State<ProfissionalScreen> {
                   ElevatedButton.icon(
                     onPressed: () {
                       FlutterOpenWhatsapp.sendSingleMessage(
-                          '${model!.idContato!.celular}',
-                          'Mensagem do Flutter');
+                          '${model.idContato!.celular}', 'Mensagem do Flutter');
                     },
                     icon: const Icon(Icons.chat_bubble_outline_rounded),
                     label: const Text('Conversar'),
