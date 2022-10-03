@@ -7,16 +7,16 @@ import 'package:poo_project/core/constants/str_constant.dart';
 import 'package:http/http.dart' as http;
 
 class ProfissionalController {
-  Future<ModeloPrestadorServicos> getPrestador() async {
-    var response =
-        await http.get(Uri.parse('$kBaseUrl/servicos/ver-todos-servicos'));
+  Future<ModeloPrestadorServicos> getPrestador(id) async {
+    var response = await http.get(
+        Uri.parse('$kBaseUrl/prestadores-servicos/prestador-servicos/$id'));
     print(response.statusCode);
     ModeloPrestadorServicos prestadorServicos = json.decode(response.body);
     return prestadorServicos;
   }
 
-  navigatorPrestador(context) {
-    if (getPrestador() != null) {
+  navigatorPrestador(context, id) {
+    if (getPrestador(id) != null) {
       Navigator.push(
           context,
           MaterialPageRoute(

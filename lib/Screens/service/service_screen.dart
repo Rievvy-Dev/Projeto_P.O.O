@@ -44,8 +44,8 @@ class _ServiceScreen extends State<ServiceScreen> {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: ((context) =>
-                          prestController.navigatorPrestador(context)),
+                      builder: ((context) => prestController.navigatorPrestador(
+                          context, model.id)),
                     ),
                   ),
                   child: Container(
