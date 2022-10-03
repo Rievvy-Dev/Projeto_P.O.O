@@ -80,8 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  CategoryScreen(widget.city, "Eventos"),
+                              builder: (context) => CategoryScreen(widget.city),
                             ),
                           ),
                           child: Container(
@@ -99,8 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  CategoryScreen(widget.city, ''),
+                              builder: (context) => CategoryScreen(widget.city),
                             ),
                           ),
                           child: Container(
@@ -118,8 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  CategoryScreen(widget.city, ''),
+                              builder: (context) => CategoryScreen(widget.city),
                             ),
                           ),
                           child: Container(

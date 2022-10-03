@@ -8,8 +8,7 @@ import 'category_repository.dart';
 
 class CategoryScreen extends StatefulWidget {
   final String city;
-  final String categoria;
-  const CategoryScreen(this.categoria, this.city, {super.key});
+  const CategoryScreen(this.city, {super.key});
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
