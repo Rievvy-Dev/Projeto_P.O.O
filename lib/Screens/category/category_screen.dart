@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class CategoryScreen extends StatefulWidget {
+  // /servicos_has_categoria.
   const CategoryScreen({super.key});
 
   @override
@@ -14,7 +15,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: ListView(children: const []),
+      body: ListView(children: []),
     );
   }
 }
