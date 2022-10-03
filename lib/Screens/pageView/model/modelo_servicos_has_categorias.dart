@@ -11,21 +11,21 @@ class ModeloServicosHasCategorias {
   ModeloServicosHasCategorias.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     idServicos = json['idServicos'] != null
-        ? new ModeloServicos.fromJson(json['idServicos'])
+        ? ModeloServicos.fromJson(json['idServicos'])
         : null;
     idCategoria = json['idCategoria'] != null
-        ? new ModeloCategoria.fromJson(json['idCategoria'])
+        ? ModeloCategoria.fromJson(json['idCategoria'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    if (this.idServicos != null) {
-      data['idServicos'] = this.idServicos!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    if (idServicos != null) {
+      data['idServicos'] = idServicos!.toJson();
     }
-    if (this.idCategoria != null) {
-      data['idCategoria'] = this.idCategoria!.toJson();
+    if (idCategoria != null) {
+      data['idCategoria'] = idCategoria!.toJson();
     }
     return data;
   }

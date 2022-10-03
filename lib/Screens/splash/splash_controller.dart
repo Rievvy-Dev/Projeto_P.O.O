@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:poo_project/Screens/localization/localization_screen.dart';
-import 'package:poo_project/Screens/pageView/home/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreenController {

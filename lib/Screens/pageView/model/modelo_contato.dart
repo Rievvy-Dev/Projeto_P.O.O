@@ -27,14 +27,14 @@ class ModeloContato {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['telefone'] = this.telefone;
-    data['celular'] = this.celular;
-    data['whatsApp'] = this.whatsApp;
-    data['email'] = this.email;
-    data['instagramLink'] = this.instagramLink;
-    data['faceBookLink'] = this.faceBookLink;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['telefone'] = telefone;
+    data['celular'] = celular;
+    data['whatsApp'] = whatsApp;
+    data['email'] = email;
+    data['instagramLink'] = instagramLink;
+    data['faceBookLink'] = faceBookLink;
     return data;
   }
 }

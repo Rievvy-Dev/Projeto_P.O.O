@@ -27,14 +27,14 @@ class ModeloEndereco {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['bairro'] = this.bairro;
-    data['cep'] = this.cep;
-    data['cidade'] = this.cidade;
-    data['rua'] = this.rua;
-    data['numero'] = this.numero;
-    data['uf'] = this.uf;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['bairro'] = bairro;
+    data['cep'] = cep;
+    data['cidade'] = cidade;
+    data['rua'] = rua;
+    data['numero'] = numero;
+    data['uf'] = uf;
     return data;
   }
 }

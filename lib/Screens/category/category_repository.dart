@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categorias.dart';
 import '../../core/constants/str_constant.dart';

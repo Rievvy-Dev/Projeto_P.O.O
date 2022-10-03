@@ -11,14 +11,16 @@ class ProfissionalController {
     var response = await http.get(
         Uri.parse('$kBaseUrl/prestadores-servicos/prestador-servicos/$id'));
     print(response.statusCode);
-    print(id);
-    ModeloPrestadorServicos prestadorServicos = json.decode(response.body);
+    print('id: $id');
+    ModeloPrestadorServicos prestadorServicos = ModeloPrestadorServicos.fromJson(json.decode(response.body)) ;
     return prestadorServicos;
   }
 
   navigatorPrestador(context, id) {
+    Future<ModeloPrestadorServicos> prestador = getPrestador(id);
     print(id);
-    if (getPrestador(id) != null) {
+    print(prestador);
+    if (prestador != null) {
       Navigator.push(context,
           MaterialPageRoute(builder: ((context) => ProfissionalScreen(id))));
     } else {

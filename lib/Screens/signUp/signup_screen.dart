@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:highlight_text/highlight_text.dart';
 import 'package:poo_project/Screens/signUp/signup_controller.dart';
 import 'package:poo_project/core/constants/app_colors.dart';

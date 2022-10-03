@@ -7,10 +7,10 @@ class CategoryController extends GetxController {
   ServiceRepository repository = ServiceRepository();
   navigatorPrestadores(context, cidade) {
     if (repository.getPrestadores(cidade) != null) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => ServiceScreen(cidade)));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => ServiceScreen(cidade)));
     } else {
-      return null;
+      return const CircularProgressIndicator();
     }
   }
 }

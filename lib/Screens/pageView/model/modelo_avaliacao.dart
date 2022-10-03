@@ -18,26 +18,26 @@ class ModeloAvaliacao {
     ModeloAvaliacao.fromJson(Map<String, dynamic> json) {
         id = json['id'];
         idPrestadorservicos = json['idPrestadorservicos'] != null
-            ? new ModeloPrestadorServicos.fromJson(json['idPrestadorservicos'])
+            ? ModeloPrestadorServicos.fromJson(json['idPrestadorservicos'])
             : null;
         idUsuario = json['idUsuario'] != null
-            ? new ModeloUsuario.fromJson(json['idUsuario'])
+            ? ModeloUsuario.fromJson(json['idUsuario'])
             : null;
         nota = json['nota'];
         descricao = json['descricao'];
     }
 
     Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = new Map<String, dynamic>();
-        data['id'] = this.id;
-        if (this.idPrestadorservicos != null) {
-            data['idPrestadorservicos'] = this.idPrestadorservicos!.toJson();
+        final Map<String, dynamic> data = <String, dynamic>{};
+        data['id'] = id;
+        if (idPrestadorservicos != null) {
+            data['idPrestadorservicos'] = idPrestadorservicos!.toJson();
         }
-        if (this.idUsuario != null) {
-            data['idUsuario'] = this.idUsuario!.toJson();
+        if (idUsuario != null) {
+            data['idUsuario'] = idUsuario!.toJson();
         }
-        data['nota'] = this.nota;
-        data['descricao'] = this.descricao;
+        data['nota'] = nota;
+        data['descricao'] = descricao;
         return data;
     }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:poo_project/Screens/category/category_controller.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_prestador_servicos.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categorias.dart';
@@ -7,8 +6,8 @@ import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categoria
 import 'category_repository.dart';
 
 class CategoryScreen extends StatefulWidget {
-  final String city;
-  const CategoryScreen(this.city, {super.key});
+  final String city = 'Garanhuns';
+  const CategoryScreen(city, {super.key});
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
@@ -31,7 +30,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: FutureBuilder<List<ModeloServicosHasCategorias>>(
-        future: getServices!,
+        future: getServices,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(

@@ -1,9 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:highlight_text/highlight_text.dart';
 import 'package:poo_project/Screens/category/category_screen.dart';
 import 'package:poo_project/Screens/pageView/home/home_screen_controller.dart';
-import 'package:poo_project/Screens/profissional/profissional_screen.dart';
 import 'package:poo_project/core/constants/app_colors.dart';
 import 'package:poo_project/core/constants/app_size.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -89,7 +87,25 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: double.infinity,
                             color: Colors.grey.withOpacity(0.6),
                             alignment: Alignment.center,
-                            child: Text('Eventos'),
+                            child: const Text('Eventos'),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CategoryScreen('Garanhuns'),
+                            ),
+                          ),
+                          child: Container(
+                            margin: const EdgeInsets.only(left: 10, right: 10),
+                            height: 60,
+                            width: double.infinity,
+                            color: Colors.grey.withOpacity(0.6),
+                            alignment: Alignment.center,
+                            child: const Text('Eventos'),
                           ),
                         ),
                       ),
@@ -107,25 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: double.infinity,
                             color: Colors.grey.withOpacity(0.6),
                             alignment: Alignment.center,
-                            child: Text('Eventos'),
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        child: GestureDetector(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CategoryScreen(widget.city),
-                            ),
-                          ),
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 10, right: 10),
-                            height: 60,
-                            width: double.infinity,
-                            color: Colors.grey.withOpacity(0.6),
-                            alignment: Alignment.center,
-                            child: Text('Eventos'),
+                            child: const Text('Eventos'),
                           ),
                         ),
                       ),

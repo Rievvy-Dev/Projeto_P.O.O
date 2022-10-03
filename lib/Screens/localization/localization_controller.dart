@@ -6,6 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:poo_project/Screens/pageView/page_view_controller.dart';
 
 class LocalizationController {
+
   static Future<String> takePosition(context) async {
     Position position = await Geolocator.getCurrentPosition();
     String city;
@@ -26,4 +27,6 @@ class LocalizationController {
     Navigator.pushReplacement(context,
         MaterialPageRoute(builder: ((context) => PageViewController(city))));
   }
+
+
 }

@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:poo_project/Screens/pageView/model/modelo_categoria.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_prestador_servicos.dart';
-import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categorias.dart';
 import 'package:poo_project/Screens/profissional/profissional_controller.dart';
-import 'package:poo_project/Screens/profissional/profissional_screen.dart';
 import 'package:poo_project/Screens/service/service_repository.dart';
 
 class ServiceScreen extends StatefulWidget {

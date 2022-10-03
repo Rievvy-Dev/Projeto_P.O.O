@@ -1,8 +1,6 @@
 import 'package:poo_project/Screens/pageView/model/modelo_contato.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_endereco.dart';
 
-import 'modelo_contato.dart';
-import 'modelo_endereco.dart';
 
 class ModeloPrestadorServicos {
   int? id;
@@ -39,10 +37,10 @@ class ModeloPrestadorServicos {
   ModeloPrestadorServicos.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     idEndereco = json['idEndereco'] != null
-        ? new ModeloEndereco.fromJson(json['idEndereco'])
+        ? ModeloEndereco.fromJson(json['idEndereco'])
         : null;
     idContato = json['idContato'] != null
-        ? new ModeloContato.fromJson(json['idContato'])
+        ? ModeloContato.fromJson(json['idContato'])
         : null;
     aceitarAgendamento = json['aceitarAgendamento'];
     aceitarCartao = json['aceitarCartao'];
@@ -59,25 +57,25 @@ class ModeloPrestadorServicos {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    if (this.idEndereco != null) {
-      data['idEndereco'] = this.idEndereco!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    if (idEndereco != null) {
+      data['idEndereco'] = idEndereco!.toJson();
     }
-    if (this.idContato != null) {
-      data['idContato'] = this.idContato!.toJson();
+    if (idContato != null) {
+      data['idContato'] = idContato!.toJson();
     }
-    data['aceitarAgendamento'] = this.aceitarAgendamento;
-    data['aceitarCartao'] = this.aceitarCartao;
-    data['aceitaPix'] = this.aceitaPix;
-    data['atende24H'] = this.atende24H;
-    data['fazDelivery'] = this.fazDelivery;
-    data['levaTraz'] = this.levaTraz;
-    data['atendeDomiciliar'] = this.atendeDomiciliar;
-    data['nome'] = this.nome;
-    data['fotoPerfil'] = this.fotoPerfil;
-    data['cpf'] = this.cpf;
-    data['senha'] = this.senha;
+    data['aceitarAgendamento'] = aceitarAgendamento;
+    data['aceitarCartao'] = aceitarCartao;
+    data['aceitaPix'] = aceitaPix;
+    data['atende24H'] = atende24H;
+    data['fazDelivery'] = fazDelivery;
+    data['levaTraz'] = levaTraz;
+    data['atendeDomiciliar'] = atendeDomiciliar;
+    data['nome'] = nome;
+    data['fotoPerfil'] = fotoPerfil;
+    data['cpf'] = cpf;
+    data['senha'] = senha;
     return data;
   }
 }
