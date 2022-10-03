@@ -2,35 +2,44 @@ import 'package:poo_project/Screens/pageView/model/modelo_prestador_servicos.dar
 import 'package:poo_project/Screens/pageView/model/modelo_usuario.dart';
 
 class ModeloAvaliacao {
-    String descricao;
-    int id;
-    ModeloPrestadorServicos idPrestadorservicos;
-    ModeloUsuario idUsuario;
-    int nota;
+    int? id;
+    ModeloPrestadorServicos? idPrestadorservicos;
+    ModeloUsuario? idUsuario;
+    int? nota;
+    String? descricao;
 
-    ModeloAvaliacao({required this.descricao,required this.id,required this.idPrestadorservicos,required this.idUsuario,required this.nota});
+    ModeloAvaliacao(
+        {this.id,
+            this.idPrestadorservicos,
+            this.idUsuario,
+            this.nota,
+            this.descricao});
 
-    factory ModeloAvaliacao.fromJson(Map<String, dynamic> json) {
-        return ModeloAvaliacao(
-            descricao: json['descricao'], 
-            id: json['id'], 
-            idPrestadorservicos: json['idPrestadorservicos'] ,
-            idUsuario: json['idUsuario'] ,
-            nota: json['nota'], 
-        );
+    ModeloAvaliacao.fromJson(Map<String, dynamic> json) {
+        id = json['id'];
+        idPrestadorservicos = json['idPrestadorservicos'] != null
+            ? new ModeloPrestadorServicos.fromJson(json['idPrestadorservicos'])
+            : null;
+        idUsuario = json['idUsuario'] != null
+            ? new ModeloUsuario.fromJson(json['idUsuario'])
+            : null;
+        nota = json['nota'];
+        descricao = json['descricao'];
     }
 
     Map<String, dynamic> toJson() {
         final Map<String, dynamic> data = new Map<String, dynamic>();
-        data['descricao'] = this.descricao;
         data['id'] = this.id;
-        data['nota'] = this.nota;
         if (this.idPrestadorservicos != null) {
-            data['idPrestadorservicos'] = this.idPrestadorservicos.toJson();
+            data['idPrestadorservicos'] = this.idPrestadorservicos!.toJson();
         }
         if (this.idUsuario != null) {
-            data['idUsuario'] = this.idUsuario.toJson();
+            data['idUsuario'] = this.idUsuario!.toJson();
         }
+        data['nota'] = this.nota;
+        data['descricao'] = this.descricao;
         return data;
     }
 }
+
+

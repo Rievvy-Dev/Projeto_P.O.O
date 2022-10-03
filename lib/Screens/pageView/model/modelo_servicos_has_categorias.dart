@@ -2,46 +2,31 @@ import 'package:poo_project/Screens/pageView/model/modelo_categoria.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_servicos.dart';
 
 class ModeloServicosHasCategorias {
-    int id;
-    ModeloCategoria idCategoria;
-    ModeloServicos idServicos;
+  int? id;
+  ModeloServicos? idServicos;
+  ModeloCategoria? idCategoria;
 
-    ModeloServicosHasCategorias({required this.id,required this.idCategoria,required this.idServicos});
+  ModeloServicosHasCategorias({this.id, this.idServicos, this.idCategoria});
 
-    factory ModeloServicosHasCategorias.fromJson(Map<String, dynamic> json) {
-        return ModeloServicosHasCategorias(
-            id: json['id'], 
-            idCategoria: json['idCategoria'] ,
-            idServicos: json['idServicos'] ,
-        );
-    }
-
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = new Map<String, dynamic>();
-        data['id'] = this.id;
-        if (this.idCategoria != null) {
-            data['idCategoria'] = this.idCategoria.toJson();
-        }
-        if (this.idServicos != null) {
-            data['idServicos'] = this.idServicos.toJson();
-        }
-        return data;
-    }
-
-    Map<String, dynamic> toMap() {
-        return {
-          "id": this.id,
-          "idCategoria": this.idCategoria,
-          "idServicos": this.idServicos,
-        };
+  ModeloServicosHasCategorias.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    idServicos = json['idServicos'] != null
+        ? new ModeloServicos.fromJson(json['idServicos'])
+        : null;
+    idCategoria = json['idCategoria'] != null
+        ? new ModeloCategoria.fromJson(json['idCategoria'])
+        : null;
   }
 
-    factory ModeloServicosHasCategorias.fromMap(Map<String, dynamic> map) {
-        return ModeloServicosHasCategorias(
-          id: int.parse(map["id"]),
-          idCategoria: ModeloCategoria.fromJson(map["idCategoria"]),
-          idServicos: ModeloServicos.fromJson(map["idServicos"]),
-        );
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    if (this.idServicos != null) {
+      data['idServicos'] = this.idServicos!.toJson();
+    }
+    if (this.idCategoria != null) {
+      data['idCategoria'] = this.idCategoria!.toJson();
+    }
+    return data;
   }
-//
 }

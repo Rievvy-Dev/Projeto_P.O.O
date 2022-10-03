@@ -1,60 +1,40 @@
 class ModeloContato {
-    String celular;
-    String email;
-    String faceBookLink;
-    int id;
-    String instagramLink;
-    String telefone;
-    int whatsApp;
+  int? id;
+  String? telefone;
+  String? celular;
+  int? whatsApp;
+  String? email;
+  String? instagramLink;
+  String? faceBookLink;
 
-    ModeloContato({required this.celular,required this.email,required this.faceBookLink,required this.id,required this.instagramLink,required this.telefone,required this.whatsApp});
+  ModeloContato(
+      {this.id,
+        this.telefone,
+        this.celular,
+        this.whatsApp,
+        this.email,
+        this.instagramLink,
+        this.faceBookLink});
 
-    factory ModeloContato.fromJson(Map<String, dynamic> json) {
-        return ModeloContato(
-            celular: json['celular'], 
-            email: json['email'], 
-            faceBookLink: json['faceBookLink'], 
-            id: json['id'], 
-            instagramLink: json['instagramLink'], 
-            telefone: json['telefone'], 
-            whatsApp: json['whatsApp'], 
-        );
-    }
-
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = new Map<String, dynamic>();
-        data['celular'] = this.celular;
-        data['email'] = this.email;
-        data['faceBookLink'] = this.faceBookLink;
-        data['id'] = this.id;
-        data['instagramLink'] = this.instagramLink;
-        data['telefone'] = this.telefone;
-        data['whatsApp'] = this.whatsApp;
-        return data;
-    }
-
-    Map<String, dynamic> toMap() {
-    return {
-      "celular": this.celular,
-      "email": this.email,
-      "faceBookLink": this.faceBookLink,
-      "id": this.id,
-      "instagramLink": this.instagramLink,
-      "telefone": this.telefone,
-      "whatsApp": this.whatsApp,
-    };
+  ModeloContato.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    telefone = json['telefone'];
+    celular = json['celular'];
+    whatsApp = json['whatsApp'];
+    email = json['email'];
+    instagramLink = json['instagramLink'];
+    faceBookLink = json['faceBookLink'];
   }
 
-    factory ModeloContato.fromMap(Map<String, dynamic> map) {
-    return ModeloContato(
-      celular: map["celular"],
-      email: map["email"],
-      faceBookLink: map["faceBookLink"],
-      id: int.parse(map["id"]),
-      instagramLink: map["instagramLink"],
-      telefone: map["telefone"],
-      whatsApp: int.parse(map["whatsApp"]),
-    );
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['telefone'] = this.telefone;
+    data['celular'] = this.celular;
+    data['whatsApp'] = this.whatsApp;
+    data['email'] = this.email;
+    data['instagramLink'] = this.instagramLink;
+    data['faceBookLink'] = this.faceBookLink;
+    return data;
   }
-//
 }

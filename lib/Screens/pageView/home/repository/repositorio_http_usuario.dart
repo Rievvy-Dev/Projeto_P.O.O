@@ -11,7 +11,7 @@ class RepositorioHttpUsuario implements InterfaceRepositorioUsuario{
   Future<List<ModeloUsuario>> findAllUsuarios() async{
     final response = await http.get('$kBaseUrl/usuarios/ver-todos-usuarios' as Uri);
     final List<dynamic> responseMap = jsonDecode(response.body);
-    return responseMap.map<ModeloUsuario>( (resp) => ModeloUsuario.fromMap(resp) ).toList();
+    return responseMap.map<ModeloUsuario>( (resp) => ModeloUsuario.fromJson(resp) ).toList();
   }
 
 }

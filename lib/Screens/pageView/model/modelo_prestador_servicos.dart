@@ -5,121 +5,83 @@ import 'modelo_contato.dart';
 import 'modelo_endereco.dart';
 
 class ModeloPrestadorServicos {
-    int aceitaPix;
-    int aceitarAgendamento;
-    int aceitarCartao;
-    int atende24H;
-    int atendeDomiciliar;
-    String cpf;
-    int fazDelivery;
-    String fotoPerfil;
-    int id;
-    ModeloContato idContato;
-    ModeloEndereco idEndereco;
-    int levaTraz;
-    int mostrarEndereco;
-    String nome;
-    String senha;
+  int? id;
+  ModeloEndereco? idEndereco;
+  ModeloContato? idContato;
+  int? aceitarAgendamento;
+  int? aceitarCartao;
+  int? aceitaPix;
+  int? atende24H;
+  int? fazDelivery;
+  int? levaTraz;
+  int? atendeDomiciliar;
+  int? mostrarEndereco;
+  String? nome;
+  String? fotoPerfil;
+  String? cpf;
+  String? senha;
 
-    ModeloPrestadorServicos({
-        required this.id,
-        required this.idContato,
-        required this.idEndereco,
-        required this.aceitaPix,
-        required this.aceitarAgendamento,
-        required this.aceitarCartao,
-        required this.atende24H,
-        required this.atendeDomiciliar,
-        required this.cpf,
-        required this.fazDelivery,
-        required this.fotoPerfil,
-        required this.levaTraz,
-        required this.mostrarEndereco,
-        required this.nome,
-        required this.senha});
+  ModeloPrestadorServicos(
+      {this.id,
+        this.idEndereco,
+        this.idContato,
+        this.aceitarAgendamento,
+        this.aceitarCartao,
+        this.aceitaPix,
+        this.atende24H,
+        this.fazDelivery,
+        this.levaTraz,
+        this.atendeDomiciliar,
+        this.mostrarEndereco,
+        this.nome,
+        this.fotoPerfil,
+        this.cpf,
+        this.senha});
 
-    factory ModeloPrestadorServicos.fromJson(Map<String, dynamic> json) {
-        return ModeloPrestadorServicos(
-            aceitaPix: json['aceitaPix'], 
-            aceitarAgendamento: json['aceitarAgendamento'], 
-            aceitarCartao: json['aceitarCartao'], 
-            atende24H: json['atende24H'], 
-            atendeDomiciliar: json['atendeDomiciliar'], 
-            cpf: json['cpf'], 
-            fazDelivery: json['fazDelivery'], 
-            fotoPerfil: json['fotoPerfil'], 
-            id: json['id'],
-            idContato: json['idContato'] ,
-            idEndereco: json['idEndereco'] ,
-            levaTraz: json['levaTraz'], 
-            mostrarEndereco: json['mostrarEndereco'], 
-            nome: json['nome'], 
-            senha: json['senha'], 
-        );
-    }
-
-    Map<String, dynamic> toJson() {
-        final Map<String, dynamic> data = new Map<String, dynamic>();
-        data['aceitaPix'] = this.aceitaPix;
-        data['aceitarAgendamento'] = this.aceitarAgendamento;
-        data['aceitarCartao'] = this.aceitarCartao;
-        data['atende24H'] = this.atende24H;
-        data['atendeDomiciliar'] = this.atendeDomiciliar;
-        data['cpf'] = this.cpf;
-        data['fazDelivery'] = this.fazDelivery;
-        data['fotoPerfil'] = this.fotoPerfil;
-        data['id'] = this.id;
-        data['levaTraz'] = this.levaTraz;
-        data['mostrarEndereco'] = this.mostrarEndereco;
-        data['nome'] = this.nome;
-        data['senha'] = this.senha;
-        if (this.idContato != null) {
-            data['idContato'] = this.idContato.toJson();
-        }
-        if (this.idEndereco != null) {
-            data['idEndereco'] = this.idEndereco.toJson();
-        }
-        return data;
-    }
-
-    Map<String, dynamic> toMap() {
-    return {
-      "aceitaPix": this.aceitaPix,
-      "aceitarAgendamento": this.aceitarAgendamento,
-      "aceitarCartao": this.aceitarCartao,
-      "atende24H": this.atende24H,
-      "atendeDomiciliar": this.atendeDomiciliar,
-      "cpf": this.cpf,
-      "fazDelivery": this.fazDelivery,
-      "fotoPerfil": this.fotoPerfil,
-      "id": this.id,
-      "idContato": this.idContato,
-      "idEndereco": this.idEndereco,
-      "levaTraz": this.levaTraz,
-      "mostrarEndereco": this.mostrarEndereco,
-      "nome": this.nome,
-      "senha": this.senha,
-    };
+  ModeloPrestadorServicos.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    idEndereco = json['idEndereco'] != null
+        ? new ModeloEndereco.fromJson(json['idEndereco'])
+        : null;
+    idContato = json['idContato'] != null
+        ? new ModeloContato.fromJson(json['idContato'])
+        : null;
+    aceitarAgendamento = json['aceitarAgendamento'];
+    aceitarCartao = json['aceitarCartao'];
+    aceitaPix = json['aceitaPix'];
+    atende24H = json['atende24H'];
+    fazDelivery = json['fazDelivery'];
+    levaTraz = json['levaTraz'];
+    atendeDomiciliar = json['atendeDomiciliar'];
+    mostrarEndereco = json['mostrarEndereco'];
+    nome = json['nome'];
+    fotoPerfil = json['fotoPerfil'];
+    cpf = json['cpf'];
+    senha = json['senha'];
   }
 
-    factory ModeloPrestadorServicos.fromMap(Map<String, dynamic> map) {
-    return ModeloPrestadorServicos(
-      aceitaPix: int.parse(map["aceitaPix"]),
-      aceitarAgendamento: int.parse(map["aceitarAgendamento"]),
-      aceitarCartao: int.parse(map["aceitarCartao"]),
-      atende24H: int.parse(map["atende24H"]),
-      atendeDomiciliar: int.parse(map["atendeDomiciliar"]),
-      cpf: map["cpf"],
-      fazDelivery: int.parse(map["fazDelivery"]),
-      fotoPerfil: map["fotoPerfil"],
-      id: int.parse(map["id"]),
-      idContato: ModeloContato.fromJson(map["idContato"]),
-      idEndereco: ModeloEndereco.fromJson(map["idEndereco"]),
-      levaTraz: int.parse(map["levaTraz"]),
-      mostrarEndereco: int.parse(map["mostrarEndereco"]),
-      nome: map["nome"],
-      senha: map["senha"],
-    );
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    if (this.idEndereco != null) {
+      data['idEndereco'] = this.idEndereco!.toJson();
+    }
+    if (this.idContato != null) {
+      data['idContato'] = this.idContato!.toJson();
+    }
+    data['aceitarAgendamento'] = this.aceitarAgendamento;
+    data['aceitarCartao'] = this.aceitarCartao;
+    data['aceitaPix'] = this.aceitaPix;
+    data['atende24H'] = this.atende24H;
+    data['fazDelivery'] = this.fazDelivery;
+    data['levaTraz'] = this.levaTraz;
+    data['atendeDomiciliar'] = this.atendeDomiciliar;
+    data['mostrarEndereco'] = this.mostrarEndereco;
+    data['nome'] = this.nome;
+    data['fotoPerfil'] = this.fotoPerfil;
+    data['cpf'] = this.cpf;
+    data['senha'] = this.senha;
+    return data;
   }
-//
 }
+
