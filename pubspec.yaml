@@ -47,6 +47,7 @@ dependencies:
   http: ^0.13.5
   carousel_slider: ^4.1.1
   open_whatsapp: ^0.0.1
+  get: ^4.6.5
   
 
 dev_dependencies:

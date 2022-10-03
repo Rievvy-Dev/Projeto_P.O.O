@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:poo_project/Screens/category/category_controller.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_prestador_servicos.dart';
 import 'package:poo_project/Screens/pageView/model/modelo_servicos_has_categorias.dart';
