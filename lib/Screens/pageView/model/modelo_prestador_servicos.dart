@@ -15,7 +15,6 @@ class ModeloPrestadorServicos {
   int? fazDelivery;
   int? levaTraz;
   int? atendeDomiciliar;
-  int? mostrarEndereco;
   String? nome;
   String? fotoPerfil;
   String? cpf;
@@ -23,20 +22,19 @@ class ModeloPrestadorServicos {
 
   ModeloPrestadorServicos(
       {this.id,
-        this.idEndereco,
-        this.idContato,
-        this.aceitarAgendamento,
-        this.aceitarCartao,
-        this.aceitaPix,
-        this.atende24H,
-        this.fazDelivery,
-        this.levaTraz,
-        this.atendeDomiciliar,
-        this.mostrarEndereco,
-        this.nome,
-        this.fotoPerfil,
-        this.cpf,
-        this.senha});
+      this.idEndereco,
+      this.idContato,
+      this.aceitarAgendamento,
+      this.aceitarCartao,
+      this.aceitaPix,
+      this.atende24H,
+      this.fazDelivery,
+      this.levaTraz,
+      this.atendeDomiciliar,
+      this.nome,
+      this.fotoPerfil,
+      this.cpf,
+      this.senha});
 
   ModeloPrestadorServicos.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -53,7 +51,7 @@ class ModeloPrestadorServicos {
     fazDelivery = json['fazDelivery'];
     levaTraz = json['levaTraz'];
     atendeDomiciliar = json['atendeDomiciliar'];
-    mostrarEndereco = json['mostrarEndereco'];
+
     nome = json['nome'];
     fotoPerfil = json['fotoPerfil'];
     cpf = json['cpf'];
@@ -76,7 +74,6 @@ class ModeloPrestadorServicos {
     data['fazDelivery'] = this.fazDelivery;
     data['levaTraz'] = this.levaTraz;
     data['atendeDomiciliar'] = this.atendeDomiciliar;
-    data['mostrarEndereco'] = this.mostrarEndereco;
     data['nome'] = this.nome;
     data['fotoPerfil'] = this.fotoPerfil;
     data['cpf'] = this.cpf;
@@ -84,4 +81,3 @@ class ModeloPrestadorServicos {
     return data;
   }
 }
-
